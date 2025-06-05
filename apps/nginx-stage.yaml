@@ -11,9 +11,11 @@ spec:
     path: charts/nginx
     helm:
       valueFiles:
-        - values.yaml
+        - envs/stage/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: stage
   syncPolicy:
-    automated: {}
+    automated:
+      prune: true
+      selfHeal: true

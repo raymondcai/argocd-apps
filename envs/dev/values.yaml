@@ -1,0 +1,20 @@
+replicaCount: 2
+
+image:
+  repository: nginx
+  tag: "1.25"
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 80
+  nodePort: 30080
+
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: nginx-dev.local
+      paths:
+        - path: /
+          pathType: Prefix

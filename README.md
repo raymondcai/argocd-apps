@@ -58,3 +58,24 @@ charts/nginx/
     ├── service.yaml
     └── ingress.yaml     <-- new
 
+If I want to separate dev and stage values.yaml into different directory. here is the layout.
+
+app-of-apps/
+├── apps/
+│   ├── nginx-dev.yaml
+│   └── nginx-stage.yaml
+├── envs/
+│   ├── dev/
+│   │   └── values.yaml
+│   └── stage/
+│       └── values.yaml
+├── base/
+│   └── nginx/       <-- Helm chart lives here
+│       ├── Chart.yaml
+│       ├── values.yaml        (default/base)
+│       └── templates/
+│           ├── deployment.yaml
+│           ├── service.yaml
+│           └── ingress.yaml
+└── root-app.yaml
+

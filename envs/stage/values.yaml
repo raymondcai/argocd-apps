@@ -1,0 +1,20 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  tag: "1.25"
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 80
+  nodePort: 30081
+
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: nginx-stage.local
+      paths:
+        - path: /
+          pathType: Prefix
