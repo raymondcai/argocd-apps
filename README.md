@@ -1,6 +1,8 @@
 In app-of-apps.yaml, which is root app, it has source.path=apps, which shows child apps are in ./apps directory. 
+
 In ./apps directory, which is child apps, each yaml defines its own resource path under source.path=manifests/nginx
-In ./manifests/nginx, it has the actual kubernetes manifests the deploy the actual application. 
+
+In ./manifests/nginx, it has the actual kubernetes manifests the deploy to actual application. 
 
 The "App of Apps" pattern in Argo CD is a powerful approach to managing multiple applications (or environments) from a single root application.
 
