@@ -8,7 +8,7 @@ image:
 service:
   type: NodePort    # <-- Change from ClusterIP to NodePort for browser testing
   port: 80
-  nodePort: 30080   # Optional fixed port for Minikube
+  # nodePort: 30080   # Optional fixed port for Minikube
 
 ingress:
   enabled: true
