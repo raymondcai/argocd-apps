@@ -5,8 +5,11 @@ metadata:
 spec:
   selector:
     app: {{ .Release.Name }}
-  ports:
-    - protocol: TCP
-      port: {{ .Values.service.port }}
-      targetPort: 80
   type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 80
+      protocol: TCP
+      {{- if eq .Values.service.type "NodePort" }}
+      nodePort: {{ .Values.service.nodePort }}
+      {{- end }}

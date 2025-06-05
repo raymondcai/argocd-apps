@@ -47,3 +47,14 @@ Variable	Description
 .Release.Revision	Incrementing number of the release version
 
 .Release.Name is a built-in Helm template variable that represents the name of the Helm release — in the context of Argo CD, this is automatically set to the name of the Application resource.
+
+To add ingress and nodeport, here is updated directory layout
+
+charts/nginx/
+├── Chart.yaml
+├── values.yaml
+└── templates/
+    ├── deployment.yaml
+    ├── service.yaml
+    └── ingress.yaml     <-- new
+
