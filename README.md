@@ -17,15 +17,18 @@ This gives you modular, scalable GitOps: organize apps by team, env, etc., and m
 
 simple manifest based directory layout:
 
+```
 argocd-apps/
 ├── README.md
 ├── app-of-apps.yaml
 └── apps/
     ├── nginx-dev.yaml
     └── nginx-stage.yaml
+```
 
 Helm based layout for app-of-apps.
 
+```
 argocd-apps/
 ├── app-of-apps.yaml
 ├── apps/
@@ -37,6 +40,7 @@ argocd-apps/
         ├── values.yaml
         └── templates/
             └── deployment.yaml
+```
 
 
 Common Built-in .Release Fields
