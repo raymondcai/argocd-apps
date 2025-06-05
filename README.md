@@ -50,6 +50,7 @@ Variable	Description
 
 To add ingress and nodeport, here is updated directory layout
 
+```
 charts/nginx/
 ├── Chart.yaml
 ├── values.yaml
@@ -57,9 +58,11 @@ charts/nginx/
     ├── deployment.yaml
     ├── service.yaml
     └── ingress.yaml     <-- new
+```
 
 If I want to separate dev and stage values.yaml into different directory. here is the layout.
 
+```
 app-of-apps/
 ├── apps/
 │   ├── nginx-dev.yaml
@@ -69,7 +72,7 @@ app-of-apps/
 │   │   └── values.yaml
 │   └── stage/
 │       └── values.yaml
-├── base/
+├── charts/
 │   └── nginx/       <-- Helm chart lives here
 │       ├── Chart.yaml
 │       ├── values.yaml        (default/base)
@@ -78,4 +81,4 @@ app-of-apps/
 │           ├── service.yaml
 │           └── ingress.yaml
 └── root-app.yaml
-
+```
