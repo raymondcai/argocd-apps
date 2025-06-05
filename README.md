@@ -46,11 +46,13 @@ argocd-apps/
 
 
 Common Built-in .Release Fields
+```
 Variable	Description
 .Release.Name	Name of the release (Application name in Argo CD)
 .Release.Namespace	Namespace Helm is installing into (not always the same as ArgoCD destination.namespace)
 .Release.Service	Usually Helm, but irrelevant in ArgoCD
 .Release.Revision	Incrementing number of the release version
+```
 
 .Release.Name is a built-in Helm template variable that represents the name of the Helm release — in the context of Argo CD, this is automatically set to the name of the Application resource.
 
