@@ -8,7 +8,10 @@ spec:
   source:
     repoURL: https://github.com/raymondcai/argocd-apps.git
     targetRevision: HEAD
-    path: manifests/nginx
+    path: charts/nginx
+    helm:
+      valueFiles:
+        - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: stage
